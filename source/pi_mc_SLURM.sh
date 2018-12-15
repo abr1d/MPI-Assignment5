@@ -10,20 +10,8 @@ module load mpi/gcc_openmpi
 cd /scratch
 mpicc -o a.out /scratch/pi_mc.c -lm
 
-echo "With 1 processes"
-time mpirun -np 2 --hostfile ./machine_list ./a.out 100000
-  
-echo "With 4 processes"
-time mpirun -np 4 --hostfile ./machine_list ./a.out 100000
-  
-echo "With 9 processes"
-time mpirun -np 6 --hostfile ./machine_list ./a.out 100000
-  
-echo "With 16 processes"
-time mpirun -np 8 --hostfile ./machine_list ./a.out 100000
-  
-echo "With 25 processes"
-time mpirun -np 10 --hostfile ./machine_list ./a.out 100000
-  
-echo "With 36 processes"
-time mpirun -np 12 --hostfile ./machine_list ./a.out 100000
+for i in {2..12..2}
+do
+  echo "With ${i} processes"
+  time mpirun -np $i --hostfile ./machine_list ./a.out 100000
+done
