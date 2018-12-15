@@ -2,7 +2,6 @@
 
 set -x
 
-# where do I start?
 echo $SLURM_SUBMIT_DIR
 
 module load mpi/gcc_openmpi
