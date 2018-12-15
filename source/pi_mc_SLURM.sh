@@ -7,7 +7,7 @@ echo $SLURM_SUBMIT_DIR
 module load mpi/gcc_openmpi
 
 cd /scratch
-mpicc -o a.out /scratch/pi_mc.c -lm
+mpicc a.out /scratch/pi_mc.c -lm
 
 for i in {2..12..2}
 do
