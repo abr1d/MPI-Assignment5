@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 #SBATCH -t 1:00:00
 #SBATCH -N 12
 #SBATCH --ntasks-per-node 4
